@@ -83,6 +83,15 @@ def qos_profile_latched_topic() -> rclpy.qos.QoSProfile:
     )
 
 
+def qos_profile_best_effort() -> rclpy.qos.QoSProfile:
+    return rclpy.qos.QoSProfile(
+        history=rclpy.qos.QoSHistoryPolicy.KEEP_LAST,
+        depth=10,
+        durability=rclpy.qos.QoSDurabilityPolicy.VOLATILE,
+        reliability=rclpy.qos.QoSReliabilityPolicy.BEST_EFFORT
+    )
+
+
 def normalise_name_strings(name) -> str:
     """
     To prepare them for a json dump, they need to have newlines and

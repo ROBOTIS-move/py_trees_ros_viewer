@@ -94,7 +94,7 @@ class Backend(qt_core.QObject):
             msg_type=self.topic_type,
             topic=topic_name,
             callback=self.tree_snapshot_handler,
-            qos_profile=utilities.qos_profile_latched_topic()
+            qos_profile=utilities.qos_profile_best_effort()
         )
 
     def tree_snapshot_handler(self, msg: py_trees_msgs.BehaviourTree):
