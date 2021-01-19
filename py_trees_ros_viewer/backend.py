@@ -43,7 +43,7 @@ class Backend(qt_core.QObject):
     def __init__(self):
         super().__init__()
         default_node_name = "tree_viewer_" + str(os.getpid())
-        self.node = rclpy.create_node(default_node_name)
+        self.node = rclpy.create_node(node_name=default_node_name, start_parameter_services=False)
         self.shutdown_requested = False
         self.topic_type = py_trees_msgs.BehaviourTree
         self.topic_type_string = 'py_trees_ros_interfaces/msg/BehaviourTree'
