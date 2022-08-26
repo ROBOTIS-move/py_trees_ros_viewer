@@ -71,7 +71,7 @@ setup(
     #   py_trees-<version>.js (and version variable therein)
     #   py_trees-<version.css
     #   index.html.
-    version='4.3.0',  # also package.xml
+    version='4.4.0',  # also package.xml
     packages=find_packages(exclude=['tests*', 'docs*']),
     data_files=[
         ('share/ament_index/resource_index/packages', ['resource/' + package_name]),
